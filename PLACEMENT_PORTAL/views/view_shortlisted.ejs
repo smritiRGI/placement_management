@@ -1,0 +1,56 @@
+<%- include header.ejs %>
+<body>
+<form action='/view_shortlisted' method='POST'>
+<label>Company_Name</h5>
+  <select id="company_name" name="id">
+                <% var i=0; %>
+                <% for(i = 0; i < rows.length; i++) {  %>
+                   <option value="<%= rows[i].company_id %>" name="id">
+                     <%= rows[i].company_name %></option>
+             <% } %>
+  </select>  
+</label> 
+<label >Branch</h5>
+  <select id="branch" name="branch">
+            <option value="CSE">CSE</option>
+            <option value="ISE">ISE</option>
+            <option value="ECE">ECE</option>
+            <option value="EE">EE</option>
+            <option value="MECH">MECH</option>     
+            <option value="CIVIL">CIVIL</option>
+            <option value="IP">IP</option>
+            <option value="MTECH">MTECH</option>
+            <option value="MCA">MCA</option>
+  </select>
+</label>
+<label>Placement/Internship
+      <select id="placement_or_internship" name="placement_or_internship">
+            <option value="Placement">PLACEMENT</option>
+            <option value="Internship">INTERNSHIP</option>
+      </select>
+</label>
+<button>View</button>
+</form> 
+<div>
+<% if(branch.length>0 && id>0  && placement_internship.length>0) { %>
+<table>
+    <tr>
+      <th>STUDENT ID</th>
+      <th>STUDENT NAME</th>
+      <th>BRANCH NAME</th>
+      <th>COMPANY NAME</th>
+    </tr>
+      <% var i=0; %>
+      <% for(i = 0; i < result.length; i++) {  %>  
+      <tr>
+        <th><%= result[i].id %></th>
+        <th><%= result[i].name %></th>
+        <th><%= result[i].branch %></th>
+        <th><%= result[i].company_name %></th>
+      </tr>
+      <% }  %>
+        </table>
+        <% } %>
+</div> 
+</body>
+</html>

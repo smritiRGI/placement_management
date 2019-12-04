@@ -1,0 +1,50 @@
+<%- include header.ejs %>
+<body>
+    <form method="post" action="/view_recruited">
+        <h5>Company_Name</h5>
+            <select id="company_name" name="id">
+                <% var i=0; %>
+                <% for(i = 0; i < company_names.length; i++) {  %>
+                   <option value="<%= company_names[i].company_id %>"
+                      name="id"><%= company_names[i].company_name %></option>
+             <% } %>
+            </select>   
+        <h5>Branch</h5>
+        <select id="branch" name="branch">
+            <option value="CSE">CSE</option>
+            <option value="ISE">ISE</option>
+            <option value="ECE">ECE</option>
+            <option value="EE">EE</option>
+            <option value="MECH">MECH</option>     
+            <option value="CIVIL">CIVIL</option>
+            <option value="IP">IP</option>
+            <option value="MTECH">MTECH</option>
+            <option value="MCA">MCA</option>
+        </select></span>
+      <button>View</button>
+    </form> 
+<div> 
+   <% if(branch.length>0 && id>0) { %>
+  <table>
+    <tr>
+      <th>STUDENT ID</th>
+      <th>STUDENT NAME</th>
+      <th>BRANCH NAME</th>
+      <th>COMPANY NAME</th>
+    </tr>
+      <% if(result.length > 0) { %>
+      <% var i=0; %>
+      <% for(i = 0; i < result.length; i++) {  %>  
+      <tr>
+        <th><%= result[i].student_id %></th>
+        <th><%= result[i].student_name %></th>
+        <th><%= result[i].branch_name %></th>
+        <th><%= result[i].company_name %></th>
+      </tr>
+      <% }  %>
+      <% } %>
+        </table>
+        <% } %>
+</div> 
+</body>
+</html>

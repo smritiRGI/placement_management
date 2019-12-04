@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ table {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table td, table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+table tr:nth-child(even){background-color: #f2f2f2;}
+
+table tr:hover {background-color: #ddd;}
+
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: black;
+  color: white;
+}
+</style>
+<h2>List Of Companies</h2>
+<table>
+      <thead>
+            <tr>
+              <th>Company name</th>
+              <th>Email</th>
+              <th>Job Description</th>
+              <th>Schedule</th>
+              <th>Update</th>
+              <th>Shortlist</th>
+              <th>Recruit</th>
+            </tr>
+      </thead>
+      <tbody>
+        <% var i = 0; %>
+           <% for(i=0;i< Companies.length ;i++) { %>
+               <tr>
+                   <td><%= Companies[i].company_name %></td>
+                   <td><%= Companies[i].email %></td>
+                   <td><%= Companies[i].job_description %></td>
+                   <td><%= Companies[i].schedule %></td>
+                   <td><a href="/update_company/<%= Companies[i].email %>">Update</a></td>
+                   <td><a href="/add_shortlist/<%= Companies[i].email %>">Add</a></td>
+                   <td><a href="/add_recruit/<%= Companies[i].email %>">Add</a></td>
+                </tr>
+      <% } %>
+      </tbody>
+    </table>
+</body>
+</html>

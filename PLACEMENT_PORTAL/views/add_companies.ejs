@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+  background-color: white;
+  width:80%;
+  margin:auto;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password],input[type=date] , input[type=number],input[type=file]{
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+select
+{
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: black;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+<form method="post" action="/add_company">
+  <div class="container">
+    <h1>Add Company</h1>
+    <hr>
+    <label for="text"><b>Company Name</b></label>
+    <input type="text" placeholder="SHELL IT" name="name" required>
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="example@gmail.com" name="email" required>
+    <label for="description"><b>Job Description</b></label>
+    <input type="text" placeholder="Enter Job Description"  name="JD" required>
+    <br>
+    <label for="Schedule"><b>Schedule</b></label>
+    <input type="text" placeholder="Enter Schedule" name="schedule" required>
+    <label for="number"><b>Mute</b></label>
+    <input type="number" placeholder="0" name="mute" required>
+     <label for="arrears"><b>Arrears</b></label>
+    <input type="number" placeholder="0" name="arrears" required>
+     <label for="tenth"><b>10th</b></label>
+    <input type="number" placeholder="70" name="tenth" required>
+     <label for="twelveth"><b>12th</b></label>
+    <input type="number" placeholder="70" name="twelveth" required>
+     <label for="cgpa"><b>cgpa</b></label>
+    <input type="number" placeholder="7" name="cgpa" required>
+    <label ><b>Branch</b></label>
+    <select name="branch" required multiple>
+      <option>CSE</option>
+      <option>ISE</option>
+      <option>ECE</option>
+      <option>EEE</option>
+      <option>MCA</option>
+      <option>MTECH</option>
+      <option>CIVIL</option>
+      <option>IPE</option>
+      <option>MECH</option>
+    </select>
+    <label><b>Registration Closed</b></label>
+    <input type="text" placeholder="NO" name="rclose" required>
+    <button type="submit" class="registerbtn">Add Company</button>
+  </div>
+</form>
+
+</body>
+</html>
